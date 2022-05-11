@@ -25,40 +25,6 @@ headers = {
 
 
 NUM = 1000 # 1000 downloaded images for each class
-# class Bing():
-#     def __init__(self, max_num=1000) -> None:
-#         self.max = max_num
-#     def save_img(self, url, save_path, index):
-#         # img_name = url[-10:]
-#         # name = re.sub('/', '', img_name)  # img_name中出现/，将其置换成空
-#         try:
-#             res = requests.get(url, headers=headers)
-#         except OSError:
-#             print('出现错误，错误的url是:', url)
-#             return 0
-#         else:
-#             with open(os.path.join(save_path,str(index)+'.jpg'), 'wb')as f:
-#                 try:
-#                     f.write(res.content)
-#                     return 1
-#                 except OSError:
-#                     print('无法保存，url是：', url)
-#                     return 0
-
-
-#     # 获取全部图片url:原图
-#     def parse_source_img(self, img_list, url):
-#         response = requests.get(url, headers=headers)
-#         response.encoding = response.apparent_encoding
-#         data = response.content.decode('utf-8', 'ignore')
-#         html = etree.HTML(data)
-#         conda_list = html.xpath('//a[@class="iusc"]/@m')
-#         for i in conda_list:
-#             img_url = re.search('"murl":"(.*?)"', i).group(1)
-#             if img_url not in img_list:
-#                 img_list.append(img_url)
-#         return img_list[:self.max]
-    
 
 class Bing():
     def __init__(self, max_num=1000):
